@@ -49,6 +49,7 @@ gulp.task('js', function() {
 		// 'app/libs/fancybox/jquery.fancybox.js',
 		'app/libs/masonry.pkgd.js',
 		'app/libs/animation/wow.min.js',
+		// 'app/libs/mmenu/jquery.mmenu.js',
 		// 'app/libs/isotope.pkgd.js',
 		'app/js/common.js', // Always at the end
 		])
