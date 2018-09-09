@@ -17,6 +17,7 @@
 
 	&--menu
 		right: 320px
+		left: -320px
 		position: fixed
 		top: 0
 
@@ -112,7 +113,6 @@
 		background: #D8D8DA
 
 .main
-	position: relative
 	padding-top: 150px
 	transition: all .3s
 
@@ -362,6 +362,11 @@
 		img
 			margin-right: 5px
 
+.wrapper
+	transition: all .3s
+	&--active
+		margin-right: 320px
+		margin-left: -320px
 
 //-----------------portfolio-------------------
 
@@ -372,6 +377,7 @@
 
 	ul
 		display: flex
+		flex-wrap: wrap
 	
 	li
 		margin-right: 20px

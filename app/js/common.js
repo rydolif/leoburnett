@@ -49,10 +49,9 @@ $(window).scroll(function() {
 //------------------------------гамбургер-----------------------------
   $('.hamburger').click(function() {
     $(this).toggleClass('hamburger-active');
-    $('nav').toggleClass('nav-active');
-    $('header').toggleClass('header--menu');
-    $('main').toggleClass('main--active');
-    $('footer').toggleClass('main--active');
+    $('.nav').toggleClass('nav-active');
+    $('.header').toggleClass('header--menu');
+    $('.wrapper').toggleClass('wrapper--active');
   });
 
 //----------------------------------------fixed----------------------------------
@@ -79,3 +78,9 @@ $(window).scroll(function() {
 
   });
 });
+
+//----------------------------------------preloader----------------------------------
+
+  $(window).on('load', function(){
+    $('.preloader').delay(1000).fadeOut('slow');
+  });
