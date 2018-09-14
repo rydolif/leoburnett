@@ -2,6 +2,11 @@
 @import "base"
 @import "page"
 
+.wrapper
+	transition: all .3s
+	&--active
+		margin-right: 320px
+		margin-left: -320px
 
 .header
 	position: absolute
@@ -34,7 +39,7 @@
 		width: 395px
 
 .nav
-	position: absolute
+	position: fixed
 	bottom: 0
 	right: -100%
 	height: 100%
@@ -139,7 +144,7 @@
 
 	&--three
 		top: 700px
-		right: -20px
+		right: 0
 		width: 150px
 
 	&--four
@@ -216,7 +221,7 @@
 		top: auto
 		left: -500px
 		bottom: 40px
-		right: 500px
+		right: 550px
 		z-index: 1
 		transition: all .6s
 		padding-left: 13%
@@ -227,7 +232,6 @@
 			margin-bottom: 23px
 
 .grid-item
-	width: 29%
 	height: auto
 	display: block
 	margin-bottom:  70px
@@ -256,7 +260,7 @@
 			top: 10px
 			left: -500px
 			bottom: 10px
-			right: 500px
+			right: 550px
 			background-color: rgba(255, 255, 255, .85)
 			z-index: 1
 			transition: all .6s
@@ -362,13 +366,12 @@
 		img
 			margin-right: 5px
 
-.wrapper
-	transition: all .3s
-	&--active
-		margin-right: 320px
-		margin-left: -320px
+
 
 //-----------------portfolio-------------------
+.main--page
+	.parallax--seven
+		width: auto
 
 .filter
 	display: flex

@@ -42,7 +42,7 @@ $(window).scroll(function() {
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: 1,
-    gutter: 102
+    gutter: 100
   });
 
 
