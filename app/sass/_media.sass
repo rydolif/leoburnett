@@ -11,20 +11,30 @@
 		flex-direction: column
 
 
+	.careers
+		&__content
+			flex-direction: column
+
+			img
+				width: 70%
+				margin: 0 auto
+			&-two
+				flex-direction: column-reverse
 
 @media only screen and (max-width : 992px)
-	#thanks
-		padding: 40px
-
-	.modal
-		width: 320px
-		padding: 40px
+	.news--page
+		&__article
+			img
+				margin-right: 20px
 
 	.grid-item
 		margin-bottom: 30px
 
 @media only screen and (max-width : 767px)
 	
+	.parallax
+		display: none
+
 	.filter
 		li
 			font-size: 15px
@@ -61,6 +71,12 @@
 		&__info
 			margin-bottom: 40px
 
+		&--page
+			&__info
+				img
+					width: 23px
+					margin-bottom: 0
+
 	.portfolio h2
 		margin-bottom: 50px
 	
@@ -71,7 +87,10 @@
 		p
 			font-size: 16px
 @media only screen and (max-width : 576px)
-
+	.careers
+		&__content
+			img
+				width: 100%
 
 
 @media only screen and (max-width : 480px)
