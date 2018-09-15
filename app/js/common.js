@@ -1,48 +1,74 @@
 $(function() {
 
-//----------------------------паралакс----------------------------------
-$(window).scroll(function() {
 
-  var parallax = $(this).scrollTop();
-
-  $('.parallax--one').css({
-    'transform' : 'translate(0%, ' + parallax/2 + '%)'
-  });
-    
-  $('.parallax--two').css({
-    'transform' : 'translate(0%, ' + parallax/13 + '%)'
-  });
-
-  $('.parallax--three').css({
-    'transform' : 'translate(0%, ' + parallax/7 + '%)'
-  });
-
-  $('.parallax--four').css({
-    'transform' : 'translate(0%, ' + parallax/8 + '%)'
-  });
-
-  $('.parallax--five').css({
-    'transform' : 'translate(0%, ' + parallax/8 + '%)'
-  });
-
-  $('.parallax--six').css({
-    'transform' : 'translate(0%, ' + parallax/6 + '%)'
-  });
-
-  $('.parallax--seven').css({
-    'transform' : 'translate(0%, ' + parallax/10 + '%)'
-  });
-
-  $('.parallax--eight').css({
-    'transform' : 'translate(0%, ' + parallax/13 + '%)'
-  });
-});
 
 //----------------------------masonry --- сетка------------------------------
-  $('.grid').masonry({
-    itemSelector: '.grid-item',
-    columnWidth: 1,
-    gutter: 100
+ 
+if($('*').is('.grid')) {
+  var $grid = $('.grid').imagesLoaded( function() {
+    $grid.masonry({
+      itemSelector: '.grid-item',
+      columnWidth: 1,
+      gutter: 100
+    });
+  });
+}
+
+
+//----------------------------wowJS-------------------------------
+  var wow = new WOW(
+    {
+      boxClass:     'wow',      // animated element css class (default is wow)
+      animateClass: 'animated', // animation css class (default is animated)
+      offset:       0,          // distance to the element when triggering the animation (default is 0)
+      mobile:       true,       // trigger animations on mobile devices (default is true)
+      live:         true,       // act on asynchronously loaded content (default is true)
+      callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+      },
+      scrollContainer: null // optional scroll container selector, otherwise use window
+    }
+  );
+  wow.init();
+
+
+//----------------------------паралакс----------------------------------
+  $(window).scroll(function() {
+
+    var parallax = $(this).scrollTop();
+
+    $('.parallax--one').css({
+      'transform' : 'translate(0%, ' + parallax/2 + '%)'
+    });
+      
+    $('.parallax--two').css({
+      'transform' : 'translate(0%, ' + parallax/13 + '%)'
+    });
+
+    $('.parallax--three').css({
+      'transform' : 'translate(0%, ' + parallax/7 + '%)'
+    });
+
+    $('.parallax--four').css({
+      'transform' : 'translate(0%, ' + parallax/8 + '%)'
+    });
+
+    $('.parallax--five').css({
+      'transform' : 'translate(0%, ' + parallax/8 + '%)'
+    });
+
+    $('.parallax--six').css({
+      'transform' : 'translate(0%, ' + parallax/6 + '%)'
+    });
+
+    $('.parallax--seven').css({
+      'transform' : 'translate(0%, ' + parallax/10 + '%)'
+    });
+
+    $('.parallax--eight').css({
+      'transform' : 'translate(0%, ' + parallax/13 + '%)'
+    });
   });
 
 
@@ -84,3 +110,4 @@ $(window).scroll(function() {
   $(window).on('load', function(){
     $('.preloader').delay(1000).fadeOut('slow');
   });
+
