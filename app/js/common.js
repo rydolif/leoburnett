@@ -1,6 +1,63 @@
 $(function() {
 
 
+  function load_more_function(){
+
+    global $wp_query;
+
+    $paged = $_POST['paged'] ? $_POST['paged'] : 1;
+
+    $args = array(
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'paged' => $paged
+//    'orderby' => 'date', // we will sort posts by date
+//    'order' => $_POST['date'] // ASC или DESC
+    );
+
+    $args['tax_query'] = array( 'relation'=>'AND' );
+
+    // for taxonomies / categories
+    if( isset( $_POST['cat'] ) && $_POST['cat'] != 'all' && $_POST['cat'] != '' ) {
+      $args['tax_query'][] = array(
+        'taxonomy' => 'category',
+        'field' => 'term_id',
+        'terms' => $_POST['cat']
+      );
+    }
+
+
+    function pre($v) {
+      echo '<pre>';
+      print_r($v);
+      echo '</pre>';
+    }
+
+    $query = new WP_Query( $args );
+    $max_pages = $query->max_num_pages;
+
+    if( $query->have_posts() ) :
+
+      while( $query->have_posts() ): $query->the_post();
+        get_template_part( 'parts/blog', 'item' );
+      endwhile;
+      wp_reset_postdata();
+
+      if ($paged < $max_pages):
+        $next_page = $paged + 1;
+        echo '<div class="col-12 btn-more"><a href="#" class="main-btn btn-shevron" id="load-more" data-page="'.$next_page.'" data-cat="'.$_POST['cat'].'">ЗАГРУЗИТЬ ЕЩЕ</a></div>';
+      endif;
+
+    else :
+      echo '<div class="col-12"><div class="alert alert-info" role="alert">Кейсы не найдени</div></div>';
+    endif;
+
+    wp_die();
+  }
+  
+  add_action('wp_ajax_load_more', 'load_more_function');
+  add_action('wp_ajax_nopriv_load_more', 'load_more_function');
+
 
 //----------------------------masonry --- сетка------------------------------
  

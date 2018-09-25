@@ -14,10 +14,20 @@
 	.careers
 		&__content
 			flex-direction: column
+			&:nth-child(even)
+				div
+					width: 100%
+					img
+						width: 100%
+						margin-left: 0
+		
+			&:nth-child(odd)
+				div
+					width: 100%
+					img
+						width: 100%
+						margin-right: 0
 
-			img
-				width: 70%
-				margin: 0 auto
 			&-two
 				flex-direction: column-reverse
 
