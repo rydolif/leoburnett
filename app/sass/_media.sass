@@ -1,6 +1,9 @@
 
 @media only screen and (max-width : 1200px)
 
+	.search-form input
+		width: 75%
+
 	.footer__container
 		flex-direction: column
 
@@ -32,6 +35,8 @@
 				flex-direction: column-reverse
 
 @media only screen and (max-width : 992px)
+	.search-form input
+		width: 65%
 	.news--page
 		&__article
 			img
@@ -41,6 +46,8 @@
 		margin-bottom: 30px
 
 @media only screen and (max-width : 767px)
+	.search-form input
+		width: 60%
 	
 	.parallax
 		display: none
@@ -102,9 +109,34 @@
 		&__content
 			img
 				width: 100%
+	.search-button
+		right: 70px
 
+	.search-form__btn
+		right: 130px
 
 @media only screen and (max-width : 480px)
+
+	.search-button
+		right: 50px
+		&::before
+			right: -5px
+
+		&--close
+			i
+				font-size: 24px
+
+	.search-form
+		&__btn
+			width: 25px
+			right: 95px
+			&::before
+				right: -10px
+
+		input
+			width: 56%
+
+
 	.header
 		&--menu
 			right: 250px
