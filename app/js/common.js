@@ -1,6 +1,8 @@
 $(function() {
 
-
+//-------------------------------попандер---------------------------------------
+  $('.modal').popup({transition: 'all 0.3s'});
+  
 //------------------------------пошук-----------------------------
   $('.search-button').click(function() {
     $('.search-form').toggleClass('search-form--active');
